@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Add Cake
+{% endblock %}
+
+{% block content %}
+
+    <section  class="m-auto bg-body-secondary d-flex flex-column justify-content-center my-5 p-5 rounded-1" style="width: 80%">
+
+        <div>
+            <p class="text-center p-2 bg-danger rounded-3 text-white ">  i  </p>
+            <h1 class="text-danger text-center fw-bold">Add a new Cake</h1>
+        </div>
+
+
+        <form action="{% url 'add_cake' %}" method="post" enctype="multipart/form-data" class="w-75 m-auto p-5">
+            {% csrf_token %}
+            {{ form }}
+            <button class="btn btn-danger w-100  mt-5">Submit</button>
+        </form>
+
+    </section>
+{% endblock %}
