@@ -22,6 +22,7 @@ from cake_shop_application.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('',index,name='index'),
     path('index/',index,name='index'),
     path('add_cake/',add_cake,name='add_cake'),
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
